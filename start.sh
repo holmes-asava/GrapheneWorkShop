@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "altoTech server start!"
+echo "server start!"
 python manage.py createcachetable
 python manage.py migrate
 python manage.py collectstatic --noinput
