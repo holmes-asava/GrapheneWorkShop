@@ -20,6 +20,8 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import routers
 from user_manager.views import NodeViewset
+from graphene_django.views import GraphQLView
+from config.schema import schema_1
 
 router = routers.DefaultRouter()
 router.register(r"node", NodeViewset, basename="node")
@@ -39,4 +41,5 @@ urlpatterns = [
     ),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("", include((router.urls, "api"), namespace="v1")),
+    path("graphql", GraphQLView.as_view(graphiql=True, schema=schema_1)),
 ]

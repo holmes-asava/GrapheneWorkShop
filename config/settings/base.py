@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
+    "django.contrib.staticfiles",  # require for graphene_django
     "django_extensions",
     "rest_framework",
     "rest_framework.authtoken",
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "health_check.cache",
     "health_check.storage",
     "timezone_field",
+    "graphene_django",
     "user_manager",
     "post_manager",
 ]
@@ -50,7 +51,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
 ]
 
-
+GRAPHENE = {"SCHEMA": "config.schema.schema"}
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
