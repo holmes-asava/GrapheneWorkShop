@@ -1,5 +1,6 @@
 # ignore ALL .log files
 .vscode/
 __pycache__/
+static/
 # ignore ALL files in ANY directory named temp
 temp/
